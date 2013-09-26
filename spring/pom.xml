@@ -9,7 +9,7 @@
       <relativePath>../parent/pom.xml</relativePath>
    </parent>
 
-   <artifactId>infinispan-spring</artifactId>
+   <artifactId>infinispan-spring-custom</artifactId>
    <packaging>bundle</packaging>
 
    <name>Infinispan Spring Integration</name>
