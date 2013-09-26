@@ -26,6 +26,7 @@ package org.infinispan.spring.provider;
 import org.springframework.cache.Cache;
 import org.springframework.cache.support.SimpleValueWrapper;
 import org.springframework.util.Assert;
+import org.infinispan.context.Flag;	  
 
 /**
  * <p>
@@ -80,7 +81,8 @@ public class SpringCache implements Cache {
     */
    @Override
    public void put(final Object key, final Object value) {
-      this.nativeCache.put(key, value);
+     ((org.infinispan.Cache)this.nativeCache).getAdvancedCache().withFlags(Flag.CACHE_MODE_LOCAL).put(key, value);	  
+     // this.nativeCache.put(key, value);
    }
 
    /**
